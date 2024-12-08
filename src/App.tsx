@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Assignments from './components/Assignments';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App bg-blue-600 min-h-screen">
+      {/* Header Section */}
+      <header className="bg-blue-600 text-white p-6 shadow-md">
+        <h1 className="text-3xl font-bold">Welcome to Tundra Dashboard</h1>
+        <p className="mt-2 text-lg">View your assignments, grades, and more!</p>
+      </header>
+      <div className="bg-red-500 text-white p-4">
+      Hello, Tailwind CSS!
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {/* Main Content Section */}
+      <main className="p-6">
+        <section className="max-w-4xl mx-auto">
+          {/* Render the Assignments component */}
+           <Assignments /> 
+        </section>
+      </main>
+    </div>
+    
+  );
 }
 
-export default App
+export default App;
